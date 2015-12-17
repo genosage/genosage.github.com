@@ -5,19 +5,19 @@
   
   <title>Java - Map | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有HashMap和TreeMap, HashMap被用来快速访问，而TreeMap则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
+  <meta name="description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有 HashMap 和 TreeMap, HashMap被用来快速访问，而 TreeMap 则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
 常用的方法如下所示：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java - Map">
 <meta property="og:url" content="https://genosage.com/2015/12/14/Java-Map/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有HashMap和TreeMap, HashMap被用来快速访问，而TreeMap则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
+<meta property="og:description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有 HashMap 和 TreeMap, HashMap被用来快速访问，而 TreeMap 则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
 常用的方法如下所示：">
 <meta property="og:image" content="http://images.cnitblog.com/blog/497634/201309/08221402-aa63b46891d0466a87e54411cd920237.jpg">
-<meta property="og:updated_time" content="2015-12-14T04:06:00.000Z">
+<meta property="og:updated_time" content="2015-12-17T06:03:35.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java - Map">
-<meta name="twitter:description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有HashMap和TreeMap, HashMap被用来快速访问，而TreeMap则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
+<meta name="twitter:description" content="Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有 HashMap 和 TreeMap, HashMap被用来快速访问，而 TreeMap 则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.
 常用的方法如下所示：">
   
     <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
@@ -134,7 +134,7 @@ ga('send', 'pageview');
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Collection/" style="font-size: 20px;">Collection</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Map/" style="font-size: 20px;">Map</a>
+						<a href="/tags/Algorithm/" style="font-size: 10px;">Algorithm</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Collection/" style="font-size: 20px;">Collection</a> <a href="/tags/HashMap/" style="font-size: 10px;">HashMap</a> <a href="/tags/HashSet/" style="font-size: 10px;">HashSet</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Java/" style="font-size: 20px;">Java</a> <a href="/tags/Leetcode/" style="font-size: 10px;">Leetcode</a> <a href="/tags/Map/" style="font-size: 15px;">Map</a> <a href="/tags/Set/" style="font-size: 10px;">Set</a>
 					</div>
 				</section>
 				
@@ -245,7 +245,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有<code>HashMap</code>和<code>TreeMap</code>, <code>HashMap</code>被用来快速访问，而<code>TreeMap</code>则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.</p>
+        <p>Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有 <code>HashMap</code> 和 <code>TreeMap</code>, <code>HashMap</code>被用来快速访问，而 <code>TreeMap</code> 则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.</p>
 <p>常用的方法如下所示：<br><a id="more"></a></p>
 <figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;<span class="keyword">String</span>, Integer&gt; <span class="built_in">map</span> = <span class="keyword">new</span> <span class="keyword">HashMap</span>&lt;<span class="keyword">String</span>, Integer&gt;();</span><br><span class="line"><span class="built_in">map</span>.put(<span class="string">"bill"</span>, <span class="number">98</span>);</span><br><span class="line"><span class="built_in">map</span>.put(<span class="string">"ryan"</span>, <span class="number">99</span>);</span><br><span class="line"><span class="built_in">boolean</span> exist = <span class="built_in">map</span>.containsKey(<span class="string">"ryan"</span>); <span class="comment">// check key exists in map</span></span><br><span class="line"><span class="built_in">int</span> <span class="built_in">point</span> = <span class="built_in">map</span>.<span class="built_in">get</span>(<span class="string">"bill"</span>); <span class="comment">// get value by key</span></span><br><span class="line"><span class="built_in">int</span> <span class="built_in">point</span> = <span class="built_in">map</span>.remove(<span class="string">"bill"</span>) <span class="comment">// remove by key, return value</span></span><br><span class="line">Set&lt;<span class="keyword">String</span>&gt; <span class="built_in">set</span> = <span class="built_in">map</span>.keySet();</span><br><span class="line"><span class="comment">// iterate Map</span></span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;<span class="keyword">String</span>, Integer&gt; entry : <span class="built_in">map</span>.entrySet()) &#123;</span><br><span class="line">    <span class="keyword">String</span> <span class="variable">key</span> = entry.getKey();</span><br><span class="line">    <span class="built_in">int</span> value = entry.getValue();</span><br><span class="line">    <span class="comment">// do some thing</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>Map架构:<br><img src="http://images.cnitblog.com/blog/497634/201309/08221402-aa63b46891d0466a87e54411cd920237.jpg" alt=""></p>
