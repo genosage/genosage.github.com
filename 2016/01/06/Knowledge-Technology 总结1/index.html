@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hello World | Genosage</title>
+  <title>Knowledge Technology 总结1 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+  <meta name="description" content="推特中药物不良反应的识别与分类一、问题简介与分析1. 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://genosage.com/2015/12/07/hello-world/index.html">
+<meta property="og:title" content="Knowledge Technology 总结1">
+<meta property="og:url" content="https://genosage.com/2016/01/06/Knowledge-Technology 总结1/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
-<meta property="og:updated_time" content="2016-01-05T09:41:30.000Z">
+<meta property="og:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1. 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
+<meta property="og:updated_time" content="2016-01-06T12:00:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.">
+<meta name="twitter:title" content="Knowledge Technology 总结1">
+<meta name="twitter:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1. 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
   
     <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
   
@@ -208,11 +208,11 @@ ga('send', 'pageview');
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Knowledge-Technology 总结1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/12/07/hello-world/" class="article-date">
-  	<time datetime="2015-12-06T23:00:00.000Z" itemprop="datePublished">2015-12-07</time>
+      <a href="/2016/01/06/Knowledge-Technology 总结1/" class="article-date">
+  	<time datetime="2016-01-06T11:42:43.000Z" itemprop="datePublished">2016-01-06</time>
 </a>
     </div>
   
@@ -225,7 +225,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      Knowledge Technology 总结1
     </h1>
   
 
@@ -234,7 +234,7 @@ ga('send', 'pageview');
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
 	</div>
 
         
@@ -245,16 +245,26 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+        <h1 id="u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B"><a href="#u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B" class="headerlink" title="推特中药物不良反应的识别与分类"></a>推特中药物不良反应的识别与分类</h1><h2 id="u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790"><a href="#u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790" class="headerlink" title="一、问题简介与分析"></a>一、问题简介与分析</h2><h3 id="1-__u836F_u7269_u4E0D_u826F_u53CD_u5E94"><a href="#1-__u836F_u7269_u4E0D_u826F_u53CD_u5E94" class="headerlink" title="1. 药物不良反应"></a>1. 药物不良反应</h3><p>本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。</p>
 <a id="more"></a>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<p>一般来说，药物不良反应(<em>Adverse Drug Reaction</em>，简称ADR)是患者在使用某种药物治疗疾病的时候产生的与治疗无关的作用，而这种作用一般都对患者的治疗不利。ADR的一些例子有，恶心反胃(<em>nausea</em>)，头晕目眩(<em>dizziness</em>)，脱发(<em>hair loss</em>)等等。对于具体的推特而言，一个被标记含有ADR(缺乏食欲)的推特为：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@jordantaylor068 yeah, I’m <span class="function_start"><span class="keyword">on</span></span> vyvanse <span class="keyword">and</span> sometimes I have <span class="keyword">to</span> be reminded <span class="keyword">to</span> eat</span><br><span class="line">because I just forget.</span><br></pre></td></tr></table></figure>
+<p>然而下面这条推特则不含有ADR:</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thanks <span class="keyword">for</span> helpin’ <span class="keyword">me</span> clean <span class="keyword">and</span> vacuum out <span class="keyword">my</span> car vyvanse.</span><br></pre></td></tr></table></figure>
+<p>需要注意的是，正确的识别某个反应究竟是不是药物引起的不良反应可能极具挑战性，并且不在本文所探讨的范畴之内，本文的技术层面更多的集中在对于数据建立特征，应用不同的机器学习算法来解决问题，并做出比较与评价。</p>
+<h3 id="2-__u7279_u5F81_u5DE5_u7A0B"><a href="#2-__u7279_u5F81_u5DE5_u7A0B" class="headerlink" title="2. 特征工程"></a>2. 特征工程</h3><p>一般来讲，特征工程指的是针对特定的数据集来创造一些特征。特征工程对于将目标数据集区分开来有着巨大的影响。大多数的机器学习都会假设数据集的特征已经被给出而并不会显示这些特征从何而来。于是，如何挑选最好的特征来使用的问题最终成为了一个以经验为依据的问题：去使用那些能够正确区分数据的特征。</p>
+<p>在实际中，研究者一般都会依据他们对于问题领域的知识以及经验来挑选和建造好的特征。而对于本文所探讨的问题而言，我们只需依据常识即可判断一条推特中的哪些特征能够反映出它是否包含了ADR。</p>
+<p>特征从种类上来说划分有 binary(T or F), categorical(a or b or c), numerical(discrete or continuous)三种，对于给定的数据集来说，三种类型的特征都可以被构造。一些机器学习算法比较偏向 numerical 类型的特征(k-NN)，而一些在categorical类型的特征下表现较好(multivariate Naive Bayes)。</p>
+<h3 id="3-__u7279_u5F81_u9009_u62E9"><a href="#3-__u7279_u5F81_u9009_u62E9" class="headerlink" title="3. 特征选择"></a>3. 特征选择</h3><p>在应用机器学习算法前的最后一个问题便是特征选择：给定一个特征集合，如何确定哪一个子集是最适合用来区分数据的。针对这个主题已经有了大量的参考文献及研究资料，并且，Weka，以及许多其他的机器学习包已经内嵌了许多特征选择的机制。对于一些特定的机器学习框架(Naive Bayes)，特征选择比其他的(SVM)更加重要。</p>
+<p>对于本文所研究的问题，举例来说，假设我们以 Mutual information (MI) 来作为依据筛选数据，选出一定数量具有最大MI值的单词，并且对于数据集中的每一条推特实例，我们都记录下这些特征的相对应的频率。</p>
+<p>这些经过预处理过的数据集的每一行会成为向量空间模型(<em>Vector Space Model</em>)，作为一个简单的例子，我们一共选取了5个特征来对数据集进行分类，它们可能分别是 id, addict, bananas, crying, need，最后是种类 class (Y，包含ADR，N，不包含ADR)。这样一来，每一条推特变成了如下的一条向量：</p>
+<pre><code>343909778008973312,0,0,0,1,N
+</code></pre><h3 id="4-__u673A_u5668_u5B66_u4E60"><a href="#4-__u673A_u5668_u5B66_u4E60" class="headerlink" title="4. 机器学习"></a>4. 机器学习</h3><p>在本文中，我们将使用 Naive Bayes, Decision Tree, K-NN 以及 ZeroR 来对数据集进行识别与分类，我们使用了机器学习的软件，在特定的框架之下来应用这些机器学习算法。</p>
+<p><a href="http://www.cs.waikato.ac.nz/ml/weka/" target="_blank" rel="external">Weka</a> 是一个非常方便的开源机器学习框架，Weka 的机器学习包中内嵌了很多的分类器，特征选择方法，评价机制，以及许多其他的容易实现并且简单易懂的机器学习概念。Weka 允许我们在 Java 代码中直接调用，在本文中，我们自己实现了一些特征工程的方法，并调用了 Weka 的分类器以及评价机制来对推特数据集进行实验。</p>
+<h3 id="5-__u5B66_u4E60_u9636_u6BB5"><a href="#5-__u5B66_u4E60_u9636_u6BB5" class="headerlink" title="5. 学习阶段"></a>5. 学习阶段</h3><p>我们使用交叉验证(<em>Cross Validation</em>)中 Hold-Out 的方法来进行实验，具体来说，我们首先将推特数据集分为两部分，一部分为训练集(training)，另一部分为测试集(test)。</p>
+<p>然后是训练阶段，我们主要通过对训练集建模来对分类器进行训练，对于 Decision Tree 分类器来说，这一般意味着根据训练集的特征建树，对于 Naive Bayes 分类器来说，这意味着计算不同事件发生的可能性等等。我们常说的参数微调(<em>Parameter tuning</em>)就发生在这个阶段。本文所使用的均为监督式机器学习，非监督式学习并不需要这一阶段。</p>
+<p>在测试阶段中，我们使用训练阶段所得到的分类器对测试集来进行识别与分类，并对比正确结果来分析评价不同的分类器。</p>
+<p>将数据集进行如此划分的好处在于可以有效的减少过拟合(<em>overfitting</em>)：得到一个只能够模仿复制训练集的分类器，而并不能够对新的数据进行判断和分类。然而需要注意的是，即使将数据集划分，仍然存在过拟合的可能性：仅仅选取在测试阶段中表现最好的分类器并不一定会在其他的测试集中表现同样最好。因此，一个成熟的分类器往往需要进行更多更复杂的验证过程，对于样本的选择也会有较高的要求。</p>
 
       
     </div>
@@ -264,15 +274,11 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2015/12/12/Leetcode-Word-Search/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Leetcode - Word Search
-        
-      </div>
-    </a>
   
+    <a href="/2015/12/17/Java-HashSet/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Java - HashSet</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
   
 </nav>
 
@@ -299,7 +305,7 @@ ga('send', 'pageview');
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="https://genosage.com/2015/12/07/hello-world/"></div>
+	<div class="ds-thread" data-thread-key="Knowledge-Technology 总结1" data-title="Knowledge Technology 总结1" data-url="https://genosage.com/2016/01/06/Knowledge-Technology 总结1/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
