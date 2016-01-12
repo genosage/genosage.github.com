@@ -5,16 +5,16 @@
   
   <title>Knowledge Technology 总结1 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
+  <meta name="description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Knowledge Technology 总结1">
 <meta property="og:url" content="https://genosage.com/2016/01/06/Knowledge-Technology 总结1/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
-<meta property="og:updated_time" content="2016-01-11T06:06:57.000Z">
+<meta property="og:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
+<meta property="og:updated_time" content="2016-01-12T09:31:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knowledge Technology 总结1">
-<meta name="twitter:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
+<meta name="twitter:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
   
     <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
   
@@ -245,7 +245,7 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B"><a href="#u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B" class="headerlink" title="推特中药物不良反应的识别与分类"></a>推特中药物不良反应的识别与分类</h1><h2 id="u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790"><a href="#u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790" class="headerlink" title="一、问题简介与分析"></a>一、问题简介与分析</h2><h3 id="1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94"><a href="#1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94" class="headerlink" title="1.1 药物不良反应"></a>1.1 药物不良反应</h3><p>本文的主要目标是基于一些被挑选过的推特来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。</p>
+        <h1 id="u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B"><a href="#u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B" class="headerlink" title="推特中药物不良反应的识别与分类"></a>推特中药物不良反应的识别与分类</h1><h2 id="u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790"><a href="#u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790" class="headerlink" title="一、问题简介与分析"></a>一、问题简介与分析</h2><h3 id="1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94"><a href="#1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94" class="headerlink" title="1.1 药物不良反应"></a>1.1 药物不良反应</h3><p>本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。</p>
 <a id="more"></a>
 <p>一般来说，药物不良反应(<em>Adverse Drug Reaction</em>，简称ADR)是患者在使用某种药物治疗疾病的时候产生的与治疗无关的作用，而这种作用一般都对患者的治疗不利。ADR的一些例子有，恶心反胃(<em>nausea</em>)，头晕目眩(<em>dizziness</em>)，脱发(<em>hair loss</em>)等等。对于具体的推特而言，一个被标记含有ADR(缺乏食欲)的推特为：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@jordantaylor068 yeah, I’m <span class="function_start"><span class="keyword">on</span></span> vyvanse <span class="keyword">and</span> sometimes I have <span class="keyword">to</span> be reminded <span class="keyword">to</span> eat</span><br><span class="line">because I just forget.</span><br></pre></td></tr></table></figure>
@@ -258,8 +258,8 @@ ga('send', 'pageview');
 <h3 id="1-3__u7279_u5F81_u9009_u62E9"><a href="#1-3__u7279_u5F81_u9009_u62E9" class="headerlink" title="1.3 特征选择"></a>1.3 特征选择</h3><p>在应用机器学习算法前的最后一个问题便是特征选择：给定一个特征集合，如何确定哪一个子集是最适合用来区分数据的。针对这个主题已经有了大量的参考文献及研究资料，并且，Weka，以及许多其他的机器学习包已经内嵌了许多特征选择的机制。对于一些特定的机器学习框架(Naive Bayes)，特征选择比其他的(SVM)更加重要。</p>
 <p>对于本文所研究的问题，举例来说，假设我们以 Mutual information (MI) 来作为依据筛选数据，选出一定数量具有最大MI值的单词，并且对于数据集中的每一条推特实例，我们都记录下这些特征的相对应的频率。</p>
 <p>这些经过预处理过的数据集的每一行会成为向量空间模型(<em>Vector Space Model</em>)，作为一个简单的例子，我们一共选取了5个特征来对数据集进行分类，它们可能分别是 id, addict, bananas, crying, need，最后是种类 class (Y，包含ADR，N，不包含ADR)。这样一来，每一条推特变成了如下的一条向量：</p>
-<pre><code>343909778008973312,0,0,0,1,N
-</code></pre><h3 id="1-4__u673A_u5668_u5B66_u4E60"><a href="#1-4__u673A_u5668_u5B66_u4E60" class="headerlink" title="1.4 机器学习"></a>1.4 机器学习</h3><p>在本文中，我们将使用 Naive Bayes, Decision Tree, K-NN 以及 ZeroR 来对数据集进行识别与分类，我们使用了机器学习的软件，在特定的框架之下来应用这些机器学习算法。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">343909778008973312</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,N</span><br></pre></td></tr></table></figure>
+<h3 id="1-4__u673A_u5668_u5B66_u4E60"><a href="#1-4__u673A_u5668_u5B66_u4E60" class="headerlink" title="1.4 机器学习"></a>1.4 机器学习</h3><p>在本文中，我们将使用 Naive Bayes, Decision Tree, K-NN 以及 ZeroR 来对数据集进行识别与分类，我们使用了机器学习的软件，在特定的框架之下来应用这些机器学习算法。</p>
 <p><a href="http://www.cs.waikato.ac.nz/ml/weka/" target="_blank" rel="external">Weka</a> 是一个非常方便的开源机器学习框架，Weka 的机器学习包中内嵌了很多的分类器，特征选择方法，评价机制，以及许多其他的容易实现并且简单易懂的机器学习概念。Weka 允许我们在 Java 代码中直接调用，在本文中，我们自己实现了一些特征工程的方法，并调用了 Weka 的分类器以及评价机制来对推特数据集进行实验。</p>
 <h3 id="1-5__u5B66_u4E60_u9636_u6BB5"><a href="#1-5__u5B66_u4E60_u9636_u6BB5" class="headerlink" title="1.5 学习阶段"></a>1.5 学习阶段</h3><p>我们使用交叉验证(<em>Cross Validation</em>)中 Hold-Out 的方法来进行实验，具体来说，我们首先将推特数据集分为两部分，一部分为训练集(training)，另一部分为测试集(test)。</p>
 <p>然后是训练阶段，我们主要通过对训练集建模来对分类器进行训练，对于 Decision Tree 分类器来说，这一般意味着根据训练集的特征建树，对于 Naive Bayes 分类器来说，这意味着计算不同事件发生的可能性等等。我们常说的参数微调(<em>Parameter tuning</em>)就发生在这个阶段。本文所使用的均为监督式机器学习，非监督式学习并不需要这一阶段。</p>
