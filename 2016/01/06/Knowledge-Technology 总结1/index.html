@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://genosage.com/2016/01/06/Knowledge-Technology 总结1/index.html">
 <meta property="og:site_name" content="Genosage">
 <meta property="og:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
-<meta property="og:updated_time" content="2016-01-12T09:31:05.000Z">
+<meta property="og:updated_time" content="2016-10-27T11:26:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knowledge Technology 总结1">
 <meta name="twitter:description" content="推特中药物不良反应的识别与分类一、问题简介与分析1.1 药物不良反应本文的主要目标是基于一些被挑选过的推特(含有药物名)来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。">
@@ -108,7 +108,7 @@ ga('send', 'pageview');
 				        
 							<li><a href="/archives">Archives</a></li>
 				        
-							<li><a href="https://drive.google.com/file/d/0B5B8lO8Bw37HUkFXNWZNQWdrbTA/view">Resume</a></li>
+							<li><a href="https://drive.google.com/file/d/0B5B8lO8Bw37HU0RuVzVxM202dHc/view">Resume</a></li>
 				        
 						</ul>
 					</nav>
@@ -185,7 +185,7 @@ ga('send', 'pageview');
 		        
 					<li><a href="/archives">Archives</a></li>
 		        
-					<li><a href="https://drive.google.com/file/d/0B5B8lO8Bw37HUkFXNWZNQWdrbTA/view">Resume</a></li>
+					<li><a href="https://drive.google.com/file/d/0B5B8lO8Bw37HU0RuVzVxM202dHc/view">Resume</a></li>
 		        
 		        <div class="clearfix"></div>
 				</ul>
@@ -248,7 +248,7 @@ ga('send', 'pageview');
 <p>一般来说，药物不良反应(<em>Adverse Drug Reaction</em>，简称ADR)是患者在使用某种药物治疗疾病的时候产生的与治疗无关的作用，而这种作用一般都对患者的治疗不利。ADR的一些例子有，恶心反胃(<em>nausea</em>)，头晕目眩(<em>dizziness</em>)，脱发(<em>hair loss</em>)等等。对于具体的推特而言，一个被标记含有ADR(缺乏食欲)的推特为：</p>
 <figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@jordantaylor068 yeah, I’m <span class="function_start"><span class="keyword">on</span></span> vyvanse <span class="keyword">and</span> sometimes I have <span class="keyword">to</span> be reminded <span class="keyword">to</span> eat</span><br><span class="line">because I just forget.</span><br></pre></td></tr></table></figure>
 <p>然而下面这条推特则不含有ADR:</p>
-<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thanks <span class="keyword">for</span> helpin’ <span class="keyword">me</span> clean <span class="keyword">and</span> vacuum out <span class="keyword">my</span> car vyvanse.</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Thanks for helpin&#8217; me clean and vacuum out my car vyvanse.</span><br></pre></td></tr></table></figure>
 <p>需要注意的是，正确的识别某个反应究竟是不是药物引起的不良反应可能极具挑战性，并且不在本文所探讨的范畴之内，本文的技术层面更多的集中在对于数据建立特征，应用不同的机器学习算法来解决问题，并做出比较与评价。</p>
 <h3 id="1-2__u7279_u5F81_u5DE5_u7A0B"><a href="#1-2__u7279_u5F81_u5DE5_u7A0B" class="headerlink" title="1.2 特征工程"></a>1.2 特征工程</h3><p>一般来讲，特征工程指的是针对特定的数据集来创造一些特征。特征工程对于将目标数据集区分开来有着巨大的影响。大多数的机器学习都会假设数据集的特征已经被给出而并不会显示这些特征从何而来。于是，如何挑选最好的特征来使用的问题最终成为了一个以经验为依据的问题：去使用那些能够正确区分数据的特征。</p>
 <p>在实际中，研究者一般都会依据他们对于问题领域的知识以及经验来挑选和建造好的特征。而对于本文所探讨的问题而言，我们只需依据常识即可判断一条推特中的哪些特征能够反映出它是否包含了ADR。</p>
