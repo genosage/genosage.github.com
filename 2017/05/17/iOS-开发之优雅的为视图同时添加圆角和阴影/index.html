@@ -3,23 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Knowledge Technology 总结3 | Genosage</title>
+  <title>iOS 开发之优雅的为视图同时添加圆角和阴影 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三、四部分：特征选择与机器学习">
+  <meta name="description" content="在最近工作期间实现老板的一个需求时，我发现需要同时给一个控件添加圆角以及阴影效果。这本来是一个非常简单的功能，但在具体开发过程中，由于这个功能会重用很多次，自己的代码显得极其冗余且丑陋。在一个普通的下午，当我又一次在一个新的页面中实现这个功能时，我的强迫症彻底爆发，于是在经过了一个下午的学习（折腾）后，这篇总结文章诞生了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Knowledge Technology 总结3">
-<meta property="og:url" content="https://genosage.com/2016/01/13/Knowledge-Technology-总结3/index.html">
+<meta property="og:title" content="iOS 开发之优雅的为视图同时添加圆角和阴影">
+<meta property="og:url" content="https://genosage.com/2017/05/17/iOS-开发之优雅的为视图同时添加圆角和阴影/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="第三、四部分：特征选择与机器学习">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0007.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/8.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0009.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0010.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0011.jpg">
-<meta property="og:updated_time" content="2016-01-14T07:27:34.000Z">
+<meta property="og:description" content="在最近工作期间实现老板的一个需求时，我发现需要同时给一个控件添加圆角以及阴影效果。这本来是一个非常简单的功能，但在具体开发过程中，由于这个功能会重用很多次，自己的代码显得极其冗余且丑陋。在一个普通的下午，当我又一次在一个新的页面中实现这个功能时，我的强迫症彻底爆发，于是在经过了一个下午的学习（折腾）后，这篇总结文章诞生了。">
+<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/WX20170517.png">
+<meta property="og:updated_time" content="2017-05-17T10:57:36.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Knowledge Technology 总结3">
-<meta name="twitter:description" content="第三、四部分：特征选择与机器学习">
+<meta name="twitter:title" content="iOS 开发之优雅的为视图同时添加圆角和阴影">
+<meta name="twitter:description" content="在最近工作期间实现老板的一个需求时，我发现需要同时给一个控件添加圆角以及阴影效果。这本来是一个非常简单的功能，但在具体开发过程中，由于这个功能会重用很多次，自己的代码显得极其冗余且丑陋。在一个普通的下午，当我又一次在一个新的页面中实现这个功能时，我的强迫症彻底爆发，于是在经过了一个下午的学习（折腾）后，这篇总结文章诞生了。">
   
     <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
   
@@ -203,11 +199,11 @@ ga('send', 'pageview');
 		</header>				
 	</div>
 </nav>
-      <div class="body-wrap"><article id="post-Knowledge-Technology-总结3" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-iOS-开发之优雅的为视图同时添加圆角和阴影" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/13/Knowledge-Technology-总结3/" class="article-date">
-  	<time datetime="2016-01-13T12:22:44.000Z" itemprop="datePublished">2016-01-13</time>
+      <a href="/2017/05/17/iOS-开发之优雅的为视图同时添加圆角和阴影/" class="article-date">
+  	<time datetime="2017-05-17T06:20:04.000Z" itemprop="datePublished">2017-05-17</time>
 </a>
     </div>
   
@@ -220,7 +216,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      Knowledge Technology 总结3
+      iOS 开发之优雅的为视图同时添加圆角和阴影
     </h1>
   
 
@@ -229,7 +225,7 @@ ga('send', 'pageview');
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Algorithm/">Algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Machine-Learning/">Machine Learning</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iOS/">iOS</a></li></ul>
 	</div>
 
         
@@ -240,10 +236,24 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第三、四部分：特征选择与机器学习</p>
-<a id="more"></a>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0007.jpg" alt="7"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/8.jpg" alt="8"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0009.jpg" alt="9"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0010.jpg" alt="10"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0011.jpg" alt="11"></p>
-
+        <p>在最近工作期间实现老板的一个需求时，我发现需要同时给一个控件添加圆角以及阴影效果。这本来是一个非常简单的功能，但在具体开发过程中，由于这个功能会重用很多次，自己的代码显得极其冗余且丑陋。在一个普通的下午，当我又一次在一个新的页面中实现这个功能时，我的强迫症彻底爆发，于是在经过了一个下午的学习（折腾）后，这篇总结文章诞生了。<br><a id="more"></a></p>
+<h2 id="u5706_u89D2_u6548_u679C"><a href="#u5706_u89D2_u6548_u679C" class="headerlink" title="圆角效果"></a>圆角效果</h2><p>想要给视图添加圆角效果，那么最常用的方法就是设置 <code>cornerRadius</code> 属性了：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">_<span class="built_in">test</span>View.layer.cornerRadius = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+<p>有关这个 <code>cornerRadius</code> 的解释，我们来看一看官方文档：</p>
+<blockquote>
+<p>Setting the radius to a value greater than 0.0 causes the layer to begin drawing rounded corners on its background. By default, the corner radius does not apply to the image in the layer’s contents property; it applies only to the background color and border of the layer. However, setting the masksToBounds property to YES causes the content to be clipped to the rounded corners.</p>
+<p>The default value of this property is 0.0.</p>
+</blockquote>
+<p>文档中说，这个圆角效果不会应用到 <code>layer</code> 中 <code>contents</code> 属性中的图片上面，而只会应用到背景颜色以及边框上，这是什么意思呢？</p>
+<p>我们知道， <code>CALayer</code> 中有一个类型为 <code>id</code> 的 <code>contents</code> 属性，这意味着我们可以将任意类型的对象赋值给它，应用是可以编译通过的。实际上，如果给 <code>contents</code> 赋的不是 <code>CGImage</code> 或者不赋值的话，这个图层会是空白的。所以说，当我们使用图层的方法让一个视图显示图片的时候，这个圆角效果是默认不会应用到图片上面的。</p>
+<p>我们来做一个实验来试试看效果，添加一个 <code>UIView</code> 然后设置好它的圆角效果以及 <code>contents</code> 属性：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_testView.layer.cornerRadius = <span class="number">10</span>;</span><br><span class="line">_testView.layer.<span class="property">contents</span> = (__bridge <span class="property">id</span>)([UIImage imageNamed:@<span class="string">"cover_home"</span>].CGImage);</span><br></pre></td></tr></table></figure>
+<p>然后我们运行程序：</p>
+<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/WX20170517.png" alt=""></p>
+<p>可以看到，我们明明设置好了圆角效果，但是图片的四角仍然是尖尖的！官方文档说的果然是对的！那么这种情况怎么办呢？文档中说了，通过设置 <code>masksToBounds</code> 属性的值为 <code>YES</code> ，就可以将图层的内容剪切成圆角的效果。</p>
+<p>这个 <code>masksToBounds</code> 属性以及 <code>UIView</code> 中的 <code>clipToBounds</code> 属性效果很相似，具体它们都做了哪些事情等以后在总结。简单来说，这个 <code>masksToBounds</code> 会将任何超过图层边界的子图层的部分截取掉。也就是说我们在一个设置了圆角效果的视图上面添加一个大小相同的子视图，子视图的四个角会超过父视图的圆角边界并将其盖住，通过设置 <code>masksToBounds</code> 属性，子视图的四个角会被截掉从而也显示出圆角效果。</p>
+<p>其实在实际开发中，使用这个 <code>masksToBounds</code> 实现圆角效果有一个坑，就是在图片非常多的情况下，界面会卡成狗。原因是这个属性导致了离屏渲染，带来很多额外的性能消耗，这个时候我们需要使用其他策略对圆角效果进行优化，这个。。。也等以后在总结吧。好像写跑题了，接下来还是继续写写添加阴影的效果。</p>
+<h2 id="u9634_u5F71_u6548_u679C"><a href="#u9634_u5F71_u6548_u679C" class="headerlink" title="阴影效果"></a>阴影效果</h2>
       
     </div>
     
@@ -252,18 +262,9 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2016/01/14/Knowledge-Technology-总结4/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          Knowledge Technology 总结4
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/01/13/如何改变讨好型人格-你根本不需要讨好任何人/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何改变讨好型人格 | 你根本不需要讨好任何人</div>
+    <a href="/2016/01/18/分分钟学会一门语言之Python篇/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分分钟学会一门语言之Python篇</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -292,7 +293,7 @@ ga('send', 'pageview');
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Knowledge-Technology-总结3" data-title="Knowledge Technology 总结3" data-url="https://genosage.com/2016/01/13/Knowledge-Technology-总结3/"></div>
+	<div class="ds-thread" data-thread-key="iOS-开发之优雅的为视图同时添加圆角和阴影" data-title="iOS 开发之优雅的为视图同时添加圆角和阴影" data-url="https://genosage.com/2017/05/17/iOS-开发之优雅的为视图同时添加圆角和阴影/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
