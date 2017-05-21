@@ -8,20 +8,16 @@
   <link rel="dns-prefetch" href="https://genosage.com">
   <title>Knowledge Technology 总结2 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第二部分：特征工程">
+  <meta name="description" content="二、特征工程原始的推特数据集中存在着大量复杂格式的 Unicode 字符以及复杂的语法结构，我们很难直接从中获取到我们所需要的与ADR相关的特征，所以，我们必须对其进行一系列的预处理之后才能够较容易的从中获取到我们所需要的特征。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Knowledge Technology 总结2">
 <meta property="og:url" content="https://genosage.com/2016/01/12/Knowledge-Technology-总结2/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="第二部分：特征工程">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0003.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0004.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0005.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0006.jpg">
-<meta property="og:updated_time" content="2017-05-19T06:32:59.000Z">
+<meta property="og:description" content="二、特征工程原始的推特数据集中存在着大量复杂格式的 Unicode 字符以及复杂的语法结构，我们很难直接从中获取到我们所需要的与ADR相关的特征，所以，我们必须对其进行一系列的预处理之后才能够较容易的从中获取到我们所需要的特征。">
+<meta property="og:updated_time" content="2017-05-21T02:25:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knowledge Technology 总结2">
-<meta name="twitter:description" content="第二部分：特征工程">
+<meta name="twitter:description" content="二、特征工程原始的推特数据集中存在着大量复杂格式的 Unicode 字符以及复杂的语法结构，我们很难直接从中获取到我们所需要的与ADR相关的特征，所以，我们必须对其进行一系列的预处理之后才能够较容易的从中获取到我们所需要的特征。">
   
     <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
   
@@ -206,12 +202,145 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第二部分：特征工程</p>
-<a id="more"></a>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0003.jpg" alt="1"></p>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0004.jpg" alt="2"></p>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0005.jpg" alt="3"></p>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0006.jpg" alt="4"></p>
+        <h2 id="u4E8C_u3001_u7279_u5F81_u5DE5_u7A0B"><a href="#u4E8C_u3001_u7279_u5F81_u5DE5_u7A0B" class="headerlink" title="二、特征工程"></a>二、特征工程</h2><p>原始的推特数据集中存在着大量复杂格式的 Unicode 字符以及复杂的语法结构，我们很难直接从中获取到我们所需要的与ADR相关的特征，所以，我们必须对其进行一系列的预处理之后才能够较容易的从中获取到我们所需要的特征。<br><a id="more"></a></p>
+<h3 id="2-1__u8BCD_u6CD5_u5206_u6790"><a href="#2-1__u8BCD_u6CD5_u5206_u6790" class="headerlink" title="2.1 词法分析"></a>2.1 词法分析</h3><p>在计算机科学中，词法分析 (<em>Lexical analysis</em>) 指的是将字符序列转化为单词 (<em>Token</em>) 序列的过程，一般是语法分析之前的步骤。在本文的实验中，词法分析主要体现在单词化 (<em>Tokenization</em>) 的过程，也就是从每一条推特中生成单词，并进行简单的处理。Token 在实验中对应的就是每一个英文单词。</p>
+<p>由于推特中含有一些非字母的字符，这些字符显然无法构成英文单词，所以，在单词化的过程中我们会将这些不规则的字符移除，同时英文字母的大小写格式并不会对一个单词的含义产生影响，我们也相应的在过程中将所有字母变为小写格式。</p>
+<p>举例说明，一条具体的推特如下：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#Prozac come <span class="built_in">and</span> <span class="keyword">help</span> <span class="keyword">me</span> please!</span><br></pre></td></tr></table></figure>
+<p>经过词法分析的过程之后：</p>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>语素</td>
+<td>prozac</td>
+<td>come</td>
+<td>and</td>
+<td>help</td>
+<td>me</td>
+<td>please</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-2__u8BCD_u5E72_u63D0_u53D6"><a href="#2-2__u8BCD_u5E72_u63D0_u53D6" class="headerlink" title="2.2 词干提取"></a>2.2 词干提取</h3><p>由于英文的语法特性，一个单词可能会有不同的形态与时态。在英文的构词学里，许多单词可能会基于某个相同的词根。词干提取 (<em>Stemming</em>) 指的是去除词缀得到词根的过程，即得到单词最一般的写法。对于一个词的形态词根，词干并不需要完全相同；相关的词映射到同一个词干一般能得到满意的结果，即使该词干不是词的有效根。</p>
+<p>举几个简单的例子说明，“cats” 、“catlike” 和 “catty” 是基于同一个词根 “cat” ；“stemmer” 、 “stemming” 和 “stemmed” 是基于同一个词根 “stem” ，无论是形态或是时态的不同形式，词干提取算法可以将这些基于同一词根的词还原成相同的单词。</p>
+<p>在我们的实验中，词干提取步骤的必要性在于，对于数据集的特征来说，它一般是一个单词或者单词组合的 pattern ，而同一个单词不同的时态在语义的角度上大致都是相同的含义，正如 “gain” 与 “gained” ， “makes” 与 “made” ，从特征工程的角度而言，它们所反映的特征没有任何区别，而假如我们将这些词作为不同单词来处理的话，它们所反映的这一特征与 ADR 的关联很有可能被弱化，从而使我们不容易捕捉到这些特征。</p>
+<p>Snowball English stemming algorithm 是一种针对英文的词干提取算法，可以在一定程度上满足我们对于还原单词的需求，然而，在本文的实验场景中，对于词干的提取与常规方法略有不同， 我们必须对其进行一定的改进才能够更好的捕捉与ADR相关的特征。</p>
+<p>下面是直接对单词应用 snowball English stemming algorithm 之后的效果：</p>
+<table>
+<thead>
+<tr>
+<th>Words</th>
+<th>Stemming</th>
+<th>Expectation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>causing</td>
+<td>cause</td>
+<td>cause</td>
+</tr>
+<tr>
+<td>caused</td>
+<td>cause</td>
+<td>cause</td>
+</tr>
+<tr>
+<td>restless</td>
+<td>rest</td>
+<td>restless</td>
+</tr>
+<tr>
+<td>painful</td>
+<td>pain</td>
+<td>painful</td>
+</tr>
+<tr>
+<td>headache</td>
+<td>head</td>
+<td>headache</td>
+</tr>
+<tr>
+<td>zombified</td>
+<td>zombify</td>
+<td>zombified</td>
+</tr>
+</tbody>
+</table>
+<p>从上表的例子可以看出，snowball English stemming algorithm 在一些情况下对于单词词根的还原并不能符合预期，尤其是在一些具有前后缀的名词或者形容词时，比如 “restless” ， “painful” ， “headache” ，这些单词本身即可反映某些与 ADR 相关的特征，将其还原会极大的影响该词所反映的原有特征，并可能与还原后词根所反映的特征产生混淆。该算法甚至可能会生成错误的单词，如在还原 “zombified” 时。</p>
+<p>由这些例子我们可以看出，词干提取在本文的实验中更加侧重的是对于一个单词不同时态的还原，如 “causing” 与 “caused” ，这些单词反映的特征基本上都是相同的。在改进的算法中，我们舍弃了对于具有前后缀形容词与名词的还原，并改进了其对于一些动词不同时态形式的还原以及名词单复数的还原，使其更加符合实验的要求。</p>
+<h3 id="2-3__u79FB_u9664_u505C_u7528_u8BCD"><a href="#2-3__u79FB_u9664_u505C_u7528_u8BCD" class="headerlink" title="2.3 移除停用词"></a>2.3 移除停用词</h3><p>在信息检索中，为了节省存储空间和提高搜索效率，在处理自然语言数据（或文本）之前或之后会自动过滤掉某些字或词，这些字或词即被称为停用词 (<em>Stop Words</em>) 。这些 停用词都是人工输入、非自动化生成的，生成后的停用词会形成一个表。但是，并没有一个明确的停用词表能够适用于所有的工具，因为对于一个给定的目的，任何一类的词语都可以被选作停用词。</p>
+<p>我们在这里所说的停用词一般是指人类语言中包含的功能词，这些功能词极其普遍，与其他词相比，功能词没有什么实际含义，比如 ’the’ 、 ’at’ 、 ’so’ 、 ’on’ 等，这些词无法反映任何与ADR相关的信息，我们直接将其移除以便减轻后期的计算量。需要注意的是，在常用的英文停用词表中，并不是所有词都不能反映一些特征，某些系动词或者人称代词可以和其他单词构成一个模式 (<em>Pattern</em>) 从而反映出推特文本的某些特征 (参见2.4) ，在常用的停用词表中，我们筛选出这些可能能够构成模式的停用词，并将其它词移除。</p>
+<p>部分在实验中被移除的停用词：</p>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+<th>—</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>about</td>
+<td>by</td>
+<td>during</td>
+</tr>
+<tr>
+<td>if</td>
+<td>of</td>
+<td>only</td>
+<td>other</td>
+</tr>
+<tr>
+<td>or</td>
+<td>out</td>
+<td>over</td>
+<td>than</td>
+</tr>
+<tr>
+<td>so</td>
+<td>there</td>
+<td>to</td>
+<td>too</td>
+</tr>
+<tr>
+<td>the</td>
+<td>with</td>
+<td>up</td>
+<td>very</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-4__u5206_u7C7B_u4E0E_u6A21_u5F0F"><a href="#2-4__u5206_u7C7B_u4E0E_u6A21_u5F0F" class="headerlink" title="2.4 分类与模式"></a>2.4 分类与模式</h3><p>在将所有的单词进行特征选择之前，我们可以人工挑选或创造一些可能极大的反应出与 ADR 相关的特征，正如本文第一部分所述，我们可以仅仅根据常识便可判断一条推特究竟含有哪些特征能够反映出其是否含有 ADR 。</p>
+<p>首先以几条含有ADR的推特为例：</p>
+<pre><code>Off to see the gi consultant this week. Hope theres something other than humira to try as not                               working also hair falling out.
+</code></pre><p>在这条推特中，“hair falling out”也就是脱发，属于ADR，同时“humira”是该条推特中所包含的药物名称，即产生ADR的来源。</p>
+<pre><code>@stark3923 cipro has a known warning of weakening the Achilles tendon. ...
+</code></pre><p>这条推特中，“cipro”是其药物名，“weakening the Achilles tendon”是其ADR。</p>
+<pre><code>Only one day in and Mirtazapine is like fluoxetine all over again, it just makes me so tiered
+</code></pre><p>产生ADR的药物为“Mirtazapine”，“makes me so tired”是具体的不良反应。</p>
+<pre><code>@Joanne__Howe enbrel is a miracle but it caused my eyes worse :( so couldn&apos;t have it anymore
+</code></pre><p>其中，ADR为“caused my eyes worse”，药物名为“enbrel”。</p>
+<pre><code>So I may be allergic to the metoprolol. Rash on my face. Needing my inhaler daily since Friday.
+</code></pre><p>这条推特含有多个ADR，“I may be allergic”，“Rash on my face”，“Needing my inhaler”均为药物“metoprolol”所产生的不良反应。</p>
+<pre><code>I suggest never stop taking Effexor abruptly because you will feel like you&apos;re on your death bed
+</code></pre><p>这条推特的后半部分以描述的方法表明了“Effexor”所产生的ADR。</p>
+<p>通过以上六条推特实例，我们可以从中发现很多特性，在描述ADR时，很多推特中都出现了发生不良反应的部位，它们多为人体器官等等，比如“hair”，“tendon”，“eyes”，“face”；一些推特中含有与导致，使，令相关的动词，我们称为致使动词，比如“makes”，“caused”；有大部分的ADR都有与之直接相关的形容词，比如“tired”，“worse”，“allergic”等等。我们可以根据这些特征来创造新的与ADR直接相关的模式，当一条推特中含有“致使动词＋人称代词＋人体器官＋ADR相关形容词”的模式时，该条推特有很大的可能性含有ADR。</p>
+<p>为了创造这些能够直接反应某些特征的模式，我们应当首先对相关的单词进行分类，也就是说将与人体器官或者致使动词等相关的单词放入同一个集合中，当系统在一条推特中检测到这些单词时，除了它们本身所反映的特征之外，它们还会被标记为所属的种类，然后系统将通过种类名去寻找是否存在我们所创造的某一个模式。</p>
 
       
 
@@ -498,7 +627,7 @@ MathJax.Hub.Queue(function() {
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">Master of UniMelb, majoring in software engineering. Interested in coding, fitness, reading, cuisine. Contact me  zhangtian1104@gmail.com</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">Master of UniMelb, majoring in&lt;br /&gt;software engineering. Interested in&lt;br /&gt;coding, fitness, reading, cuisine.&lt;br /&gt;&lt;br /&gt;Contact me&lt;br /&gt;zhangtian1104@gmail.com</div>
   	  	
     	</section>
     
