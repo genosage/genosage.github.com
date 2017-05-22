@@ -1,1 +1,1 @@
-#http://www.genosage.com/
+# Welcome to [my blog](http://www.genosage.com/)
