@@ -8,23 +8,17 @@
   <link rel="dns-prefetch" href="https://genosage.com">
   <title>Knowledge Technology 总结3 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第三、四部分：特征选择与机器学习">
+  <meta name="description" content="三、特征选择在特征工程之中，选择一组具有代表性的特征用于构建模型是非常重要的问题。特征选择的目标即是寻找最优特征子集。特征选择能剔除不相关 ( irrelevant ) 或冗余 ( redundant ) 的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的。另一方面，选取出真正相关的特征可以简化模型，协助理解数据产生的过程。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Knowledge Technology 总结3">
 <meta property="og:url" content="https://genosage.com/2016/01/13/Knowledge-Technology-总结3/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="第三、四部分：特征选择与机器学习">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0007.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/8.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0009.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0010.jpg">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0011.jpg">
-<meta property="og:updated_time" content="2016-01-14T07:27:34.000Z">
+<meta property="og:description" content="三、特征选择在特征工程之中，选择一组具有代表性的特征用于构建模型是非常重要的问题。特征选择的目标即是寻找最优特征子集。特征选择能剔除不相关 ( irrelevant ) 或冗余 ( redundant ) 的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的。另一方面，选取出真正相关的特征可以简化模型，协助理解数据产生的过程。">
+<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/Math1.png">
+<meta property="og:updated_time" content="2017-05-23T06:26:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knowledge Technology 总结3">
-<meta name="twitter:description" content="第三、四部分：特征选择与机器学习">
-  
-    <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
+<meta name="twitter:description" content="三、特征选择在特征工程之中，选择一组具有代表性的特征用于构建模型是非常重要的问题。特征选择的目标即是寻找最优特征子集。特征选择能剔除不相关 ( irrelevant ) 或冗余 ( redundant ) 的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的。另一方面，选取出真正相关的特征可以简化模型，协助理解数据产生的过程。">
   
   
     <link rel="icon" href="/assets/favicon.ico">
@@ -112,6 +106,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:zhangtian1104@gmail.com" title="mail"><i class="icon-mail"></i></a>
@@ -156,6 +152,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/genosage" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -207,9 +205,146 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第三、四部分：特征选择与机器学习</p>
+        <h2 id="u4E09_u3001_u7279_u5F81_u9009_u62E9"><a href="#u4E09_u3001_u7279_u5F81_u9009_u62E9" class="headerlink" title="三、特征选择"></a>三、特征选择</h2><p>在特征工程之中，选择一组具有代表性的特征用于构建模型是非常重要的问题。特征选择的目标即是寻找最优特征子集。特征选择能剔除不相关 ( <em>irrelevant</em> ) 或冗余 ( <em>redundant</em> ) 的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的。另一方面，选取出真正相关的特征可以简化模型，协助理解数据产生的过程。</p>
 <a id="more"></a>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0007.jpg" alt="7"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/8.jpg" alt="8"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0009.jpg" alt="9"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0010.jpg" alt="10"><br><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0011.jpg" alt="11"></p>
+<p>特征选择和机器学习算法两者存在紧密的联系，根据特征选择中子集评价标准和后续学习算法的结合方式可分为嵌入式 ( <em>Embedded</em> ) 、过滤式 ( <em>Filter</em> ) 和封装式 ( <em>Wrapper</em> ) 式三种。在本文的实验中，我们主要使用了过滤式特征选择的方法来具体评价之前所得到的特征集合。</p>
+<p>过滤式特征选择的评价标准从数据集本身的内在性质获得，与特定的学习算法无关，因此具有较好的通用性。通常选择和类别相关度大的特征或者特征子集。过滤式特征选择算法认为，相关度较大的特征或者特征子集会在分类器上可以获得较高的准确率。过滤式特征选择算法的优点主要有，算法的通用性强；省去了分类器的训练步骤，算法复杂性低，因而适用于大规模数据集；可以快速去除大量不相关的特征，作为特征的预筛选器非常合适。</p>
+<p>我们在实验中首先以互信息为评价标准对特征集进行筛选，在得到一定数量的特征后再根据信息增益率对得到的特征集合进行了二次筛选。</p>
+<h3 id="3-1__u4E92_u4FE1_u606F"><a href="#3-1__u4E92_u4FE1_u606F" class="headerlink" title="3.1 互信息"></a>3.1 互信息</h3><p>互信息 ( <em>Mutual Information</em> ) 描述的是两个随机变量的相互依赖性的程度。不同于相关系数，互信息并不局限于实值随机变量，它更加一般且决定着联合分布 p(X,Y) 和分解的边缘分布的乘积 p(X)p(Y) 的相似程度。互信息是点间互信息 ( <em>PMI</em> ) 的期望值。</p>
+<p>两个离散随机变量 X 和 Y 的互信息可以定义为：</p>
+<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/Math1.png" alt="Math1"></p>
+<p>其中 p(x,y) 是 X 和 Y 的联合概率分布函数，而 p(x) 和 p(y) 分别是 X 和 Y 的边缘概率分布函数。</p>
+<p>直观上，互信息度量 X 和 Y 共享的信息：它度量知道这两个变量其中一个，对另一个不确定度减少的程度。例如，如果 X 和 Y 相互独立，则知道 X 不对 Y 提供任何信息，反之亦然，所以它们的互信息为零。在另一个极端，如果 X 是 Y 的一个确定性函数，且 Y 也是 X 的一个确定性函数，那么传递的所有信息被 X 和 Y 共享：知道 X 决定 Y 的值，反之亦然。因此，在此情形互信息与 Y（ 或 X ）单独包含的不确定度相同，称作 Y（ 或 X ）的熵。而且，这个互信息与 X 的熵和 Y 的熵相同。</p>
+<p>对于特征工程中所得的所有的特征集合计算其与是否含有 ADR 的互信息的值，以该值为标准筛选出最大的100个特征，这些特征具有较高的与 ADR 的相关程度，排除出冗余的，不相关的特征以建立更好的描述数据特征的模型。</p>
+<p>以下是互信息值最大的前10个特征：</p>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>me</td>
+</tr>
+<tr>
+<td>2</td>
+<td>makes</td>
+</tr>
+<tr>
+<td>3</td>
+<td>feel</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Pattern2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>i</td>
+</tr>
+<tr>
+<td>6</td>
+<td>lozenge</td>
+</tr>
+<tr>
+<td>7</td>
+<td>sick</td>
+</tr>
+<tr>
+<td>8</td>
+<td>prozac</td>
+</tr>
+<tr>
+<td>9</td>
+<td>it</td>
+</tr>
+<tr>
+<td>10</td>
+<td>making</td>
+</tr>
+</tbody>
+</table>
+<p>根据互信息筛选出来的100个特征，以我们的常识看来大部分都与 ADR 有着直接相关的关系，它们或多或少地反映出了 ADR 的某些特点，然而这其中也存在着一些并不能提供任何信息的特征，以互信息值最大的前十个特征来说，他们中有一半的特征与 ADR 毫无关系甚至属于停用词。这其实是由于互信息特征筛选方法的局限性导致的，我们重新观察计算互信息的公式可以发现，对于一些特征如 “me” ， “i” 来说，虽然它们与 ADR 的相关程度并不高，但是，这些特征无论是在含有或是不含有 ADR 的推特中数量都远远高于其他特征，这将导致它们与 ADR 的联合分布值增大，从而使其互信息也相应增大。</p>
+<p>为了将这些不能提供任何信息但是常见的特征筛选出去，我们在根据互信息筛选出来的100个特征的基础之上以增益率做了二次筛选。</p>
+<h3 id="3-2__u589E_u76CA_u7387"><a href="#3-2__u589E_u76CA_u7387" class="headerlink" title="3.2 增益率"></a>3.2 增益率</h3><p>增益率 ( <em>Gain Ratio</em> ) 指的是信息增益 ( <em>Information Gain</em> ) 与内在信息 ( <em>intrinsic information</em> ) 的比率，在决策树的 ID3 算法中，增益率被用来减少算法对于多值特征的偏向。增益率在选择特征时考虑到了数量以及分支的大小。</p>
+<p>在实验中，我们选用了类似的方法来对100个特征进行二次筛选， GainRatioAttributeEval 是一种基于增益率的特征选择方法，该算法对于 Gain Ratio 的计算方法如下所示，其中 H 代表熵。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">GainR</span><span class="params">(Class, Attribute)</span></span> = (<span class="function"><span class="title">H</span><span class="params">(Class)</span></span> - <span class="function"><span class="title">H</span><span class="params">(Class | Attribute)</span></span>) / <span class="function"><span class="title">H</span><span class="params">(Attribute)</span></span>.</span><br></pre></td></tr></table></figure>
+<p>我们选出增益率最大的60个特征，其中前15个特征为：</p>
+<table>
+<thead>
+<tr>
+<th>—</th>
+<th>特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Pattern2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Pattern5</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pattern4</td>
+</tr>
+<tr>
+<td>4</td>
+<td>zombie</td>
+</tr>
+<tr>
+<td>5</td>
+<td>withdrawals</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Pattern6</td>
+</tr>
+<tr>
+<td>7</td>
+<td>munchies</td>
+</tr>
+<tr>
+<td>8</td>
+<td>lbs</td>
+</tr>
+<tr>
+<td>9</td>
+<td>hating</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Pattern3</td>
+</tr>
+<tr>
+<td>11</td>
+<td>tendon</td>
+</tr>
+<tr>
+<td>12</td>
+<td>glassncision</td>
+</tr>
+<tr>
+<td>13</td>
+<td>retention</td>
+</tr>
+<tr>
+<td>14</td>
+<td>crying</td>
+</tr>
+<tr>
+<td>15</td>
+<td>headaches</td>
+</tr>
+</tbody>
+</table>
+<p>从上表我们可知，经过增益率的筛选之后，排名较高的特征基本都与 ADR 有着较大的关联程度，即使一些特征在数据集中非常少见，但是由于其能够很好的反映出推特中是否含有 ADR ，仍然被认作是好的特征。在经过增益率的二次筛选后，这些特征在数量以及与 ADR 相关的程度上达到了一定的平衡，能够建立起可以反映数据集的模型，应用机器学习算法。</p>
+<p>我们在实验中没有直接使用增益率对完整的特征集合进行筛选的原因是，GainRatioAttributeEval 算法考虑到了特征所出现的数量，并且，数量在算法中对于一个特征的增益率的影响较大，如果直接对完整特征集进行筛选时会得到大量的少见或者仅仅出现过一次的特征，这显然不符合我们对于特征选择的要求。</p>
 
       
 

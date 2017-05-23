@@ -8,19 +8,22 @@
   <link rel="dns-prefetch" href="https://genosage.com">
   <title>Knowledge Technology 总结4 | Genosage</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第五部分：结论与参考文献">
+  <meta name="description" content="四、机器学习在得到理想的特征集合后，我们应用 Weka 中内嵌的机器学习算法，使用不同的分类器来对测试集 ( test ) 进行判断，并以准确率 ( Accuracy ) ，精确度 ( Precision )，召回率 ( Recall ) 以及 F-measure 来对不同的分类器预测的结果进行评价。
+假设在数据集中，TP 为含有 ADR 且系统也判断含有的推特的数量，TN 为不含有 ADR 且系">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Knowledge Technology 总结4">
 <meta property="og:url" content="https://genosage.com/2016/01/14/Knowledge-Technology-总结4/index.html">
 <meta property="og:site_name" content="Genosage">
-<meta property="og:description" content="第五部分：结论与参考文献">
-<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/0012.jpg">
-<meta property="og:updated_time" content="2016-01-14T07:23:53.000Z">
+<meta property="og:description" content="四、机器学习在得到理想的特征集合后，我们应用 Weka 中内嵌的机器学习算法，使用不同的分类器来对测试集 ( test ) 进行判断，并以准确率 ( Accuracy ) ，精确度 ( Precision )，召回率 ( Recall ) 以及 F-measure 来对不同的分类器预测的结果进行评价。
+假设在数据集中，TP 为含有 ADR 且系统也判断含有的推特的数量，TN 为不含有 ADR 且系">
+<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image.png">
+<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image-2.png">
+<meta property="og:image" content="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image-3.png">
+<meta property="og:updated_time" content="2017-05-23T06:37:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Knowledge Technology 总结4">
-<meta name="twitter:description" content="第五部分：结论与参考文献">
-  
-    <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
+<meta name="twitter:description" content="四、机器学习在得到理想的特征集合后，我们应用 Weka 中内嵌的机器学习算法，使用不同的分类器来对测试集 ( test ) 进行判断，并以准确率 ( Accuracy ) ，精确度 ( Precision )，召回率 ( Recall ) 以及 F-measure 来对不同的分类器预测的结果进行评价。
+假设在数据集中，TP 为含有 ADR 且系统也判断含有的推特的数量，TN 为不含有 ADR 且系">
   
   
     <link rel="icon" href="/assets/favicon.ico">
@@ -108,6 +111,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:zhangtian1104@gmail.com" title="mail"><i class="icon-mail"></i></a>
@@ -152,6 +157,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/genosage" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -203,9 +210,34 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第五部分：结论与参考文献</p>
+        <h2 id="u56DB_u3001_u673A_u5668_u5B66_u4E60"><a href="#u56DB_u3001_u673A_u5668_u5B66_u4E60" class="headerlink" title="四、机器学习"></a>四、机器学习</h2><p>在得到理想的特征集合后，我们应用 Weka 中内嵌的机器学习算法，使用不同的分类器来对测试集 ( <em>test</em> ) 进行判断，并以准确率 ( <em>Accuracy</em> ) ，精确度 ( <em>Precision</em> )，召回率 ( <em>Recall</em> ) 以及 F-measure 来对不同的分类器预测的结果进行评价。</p>
+<p>假设在数据集中，TP 为含有 ADR 且系统也判断含有的推特的数量，TN 为不含有 ADR 且系统也判断不含有的推特的数量，FP 为不含有 ADR 但系统判断含有的推特的数量，FN 为含有 ADR 但系统判断不含有的推特的数量。</p>
 <a id="more"></a>
-<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/0012.jpg" alt="12"></p>
+<p>准确率反映了分类器统对整个样本的判定能力，其计算公式为：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Accuracy = <span class="list">( <span class="keyword">TP</span> + TN )</span> / <span class="list">( <span class="keyword">TP</span> + FN + FP + TN )</span></span><br></pre></td></tr></table></figure>
+<p>精确度反映了被分类器判定的正例中真正的正例样本的比重，其计算公式为：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Precision = TP / <span class="list">( <span class="keyword">TP</span> + FP )</span></span><br></pre></td></tr></table></figure>
+<p>召回率反映了被正确判定的正例占总的正例的比重 ，其计算公式为：</p>
+<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Recall = TP / <span class="list">( <span class="keyword">TP</span> + FN )</span></span><br></pre></td></tr></table></figure>
+<p>F-measure 综合了精确度与召回率，其计算公式为：</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">F-measure = 2 <span class="keyword">*</span> 召回率 <span class="keyword">*</span>  准确率 / ( 召回率 + 准确率 )</span><br></pre></td></tr></table></figure>
+<h3 id="4-1_ZeroR"><a href="#4-1_ZeroR" class="headerlink" title="4.1 ZeroR"></a>4.1 ZeroR</h3><p>ZeroR 分类器对于所有的测试集计算得出熵值最大的类别 ( <em>Class</em> ) ，然后对于所有的新输入的数据都将其判断为该类别。ZeroR 分类器与特征无关，可以作为其它分类器的基准 ( <em>Baseline</em> ) 来使用。</p>
+<p>实验结果：</p>
+<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image.png" alt="Result1"></p>
+<h3 id="4-2__u6734_u7D20_u8D1D_u53F6_u65AF"><a href="#4-2__u6734_u7D20_u8D1D_u53F6_u65AF" class="headerlink" title="4.2 朴素贝叶斯"></a>4.2 朴素贝叶斯</h3><p>实验结果：</p>
+<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image-2.png" alt="Result2"></p>
+<h3 id="4-3__u51B3_u7B56_u6811"><a href="#4-3__u51B3_u7B56_u6811" class="headerlink" title="4.3 决策树"></a>4.3 决策树</h3><p>实验结果：</p>
+<p><img src="http://7xp0zm.com1.z0.glb.clouddn.com/pasted-image-3.png" alt="Result3"></p>
+<h2 id="u4E94_u3001_u7ED3_u8BBA"><a href="#u4E94_u3001_u7ED3_u8BBA" class="headerlink" title="五、结论"></a>五、结论</h2><p>由第四部分可以看出，朴素贝叶斯与决策树无论是在准确率还是在 F-measure 方面相对于基准 ZeroR 分类器都有了较大的提升，说明了挑选出来的特征所建立的模型能够较好的反映出数据集与 ADR 的关系。</p>
+<p>在实验中我们发现，当我们将特征的属性从 numerical 转变为 binary 时，朴素贝叶斯分类器的性能有了很大的提升，这说明了朴素贝叶斯分类器更加偏向于 categorical 或者是 numerical 类型的特征。 ( 这段话好像有问题？)</p>
+<p>对于朴素贝叶斯算法来说，出现次数很少但是与 ADR 相关性较大的属性并不需要去除，朴素贝叶斯算法更加偏向于特征与 ADR 的实际关联程度，即根据 Gain Ratio 筛选之后的特征，在好的特征已经被选定的情况之下，朴素贝叶斯分类器能够取得较理想的效果。</p>
+<p>决策树中的 ID3 算法可以根据信息增益对特征进行筛选建立树，在特征多且复杂时，决策树算法很容易产生过拟合。对于决策树分类器来说，当加入领域知识 ( <em>Domain Knowledge</em> ) ，即我们在实验中所创造的9个模式时，分类器的性能将会大大增加。</p>
+<p>在实验中，我们还发现，特征工程在机器学习中有着极其巨大的作用，它基本上决定了分类器所能达到的上限，当特征的鉴别性不足时，使用不同的分类器并不能提高其性能，这也是文章第一部分所说的，机器学习算法并不会对数据集的特征进行挑选得出鉴别性关联性好的特征，而是需要我们在特征工程阶段尽量引入领域知识，并且对提取出来的特征进行选择、变换和在学习。</p>
+<h2 id="u53C2_u8003_u6587_u732E"><a href="#u53C2_u8003_u6587_u732E" class="headerlink" title="参考文献"></a>参考文献</h2><blockquote>
+<p>Harris E. Information Gain Versus Gain Ratio: A Study of Split Method Biases[C]//ISAIM. 2002.</p>
+<p>Huang J, Lu J, Ling C X. Comparing naive Bayes, decision trees, and SVM with AUC and accuracy[C]//Data Mining, 2003. ICDM 2003. Third IEEE International Conference on. IEEE, 2003: 553- 556. </p>
+<p>Xiang G, Fan B, Wang L, et al. Detecting offensive tweets via topical feature discovery over a large scale twitter corpus[C]//Proceedings of the 21st ACM international conference on Information and knowledge management. ACM, 2012: 1980-1984.</p>
+</blockquote>
 
       
 

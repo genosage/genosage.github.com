@@ -18,8 +18,6 @@
 <meta name="twitter:title" content="Genosage">
 <meta name="twitter:description">
   
-    <link rel="alternative" href="/atom.xml" title="Genosage" type="application/atom+xml">
-  
   
     <link rel="icon" href="/assets/favicon.ico">
   
@@ -106,6 +104,8 @@ var _hmt = _hmt || [];
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
 		        
+					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
+		        
 					<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 					<a class="mail" target="_blank" href="mailto:zhangtian1104@gmail.com" title="mail"><i class="icon-mail"></i></a>
@@ -150,6 +150,8 @@ var _hmt = _hmt || [];
 						<a class="github" target="_blank" href="https://github.com/genosage" title="github"><i class="icon-github"></i></a>
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/2395597413/profile?rightmod=1&wvr=6&mod=personinfo" title="weibo"><i class="icon-weibo"></i></a>
+			        
+						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
 						<a class="zhihu" target="_blank" href="http://www.zhihu.com/people/zhangtian1104" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
@@ -326,7 +328,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第五部分：结论与参考文献</p>
+        <h2 id="u56DB_u3001_u673A_u5668_u5B66_u4E60"><a href="#u56DB_u3001_u673A_u5668_u5B66_u4E60" class="headerlink" title="四、机器学习"></a>四、机器学习</h2><p>在得到理想的特征集合后，我们应用 Weka 中内嵌的机器学习算法，使用不同的分类器来对测试集 ( <em>test</em> ) 进行判断，并以准确率 ( <em>Accuracy</em> ) ，精确度 ( <em>Precision</em> )，召回率 ( <em>Recall</em> ) 以及 F-measure 来对不同的分类器预测的结果进行评价。</p>
+<p>假设在数据集中，TP 为含有 ADR 且系统也判断含有的推特的数量，TN 为不含有 ADR 且系统也判断不含有的推特的数量，FP 为不含有 ADR 但系统判断含有的推特的数量，FN 为含有 ADR 但系统判断不含有的推特的数量。</p>
         
           <a class="article-more-a" href="/2016/01/14/Knowledge-Technology-总结4/#more">more >></a>
         
@@ -391,7 +394,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>第三、四部分：特征选择与机器学习</p>
+        <h2 id="u4E09_u3001_u7279_u5F81_u9009_u62E9"><a href="#u4E09_u3001_u7279_u5F81_u9009_u62E9" class="headerlink" title="三、特征选择"></a>三、特征选择</h2><p>在特征工程之中，选择一组具有代表性的特征用于构建模型是非常重要的问题。特征选择的目标即是寻找最优特征子集。特征选择能剔除不相关 ( <em>irrelevant</em> ) 或冗余 ( <em>redundant</em> ) 的特征，从而达到减少特征个数，提高模型精确度，减少运行时间的目的。另一方面，选取出真正相关的特征可以简化模型，协助理解数据产生的过程。</p>
         
           <a class="article-more-a" href="/2016/01/13/Knowledge-Technology-总结3/#more">more >></a>
         
@@ -583,7 +586,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B"><a href="#u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B" class="headerlink" title="推特中药物不良反应的识别与分类"></a>推特中药物不良反应的识别与分类</h1><h2 id="u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790"><a href="#u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790" class="headerlink" title="一、问题简介与分析"></a>一、问题简介与分析</h2><h3 id="1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94"><a href="#1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94" class="headerlink" title="1.1 药物不良反应"></a>1.1 药物不良反应</h3><p>本文的主要目标是基于一些被挑选过的推特 (含有药物名) 来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。</p>
+        <h1 id="u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B"><a href="#u63A8_u7279_u4E2D_u836F_u7269_u4E0D_u826F_u53CD_u5E94_u7684_u8BC6_u522B_u4E0E_u5206_u7C7B" class="headerlink" title="推特中药物不良反应的识别与分类"></a>推特中药物不良反应的识别与分类</h1><h2 id="u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790"><a href="#u4E00_u3001_u95EE_u9898_u7B80_u4ECB_u4E0E_u5206_u6790" class="headerlink" title="一、问题简介与分析"></a>一、问题简介与分析</h2><h3 id="1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94"><a href="#1-1__u836F_u7269_u4E0D_u826F_u53CD_u5E94" class="headerlink" title="1.1 药物不良反应"></a>1.1 药物不良反应</h3><p>本文的主要目标是基于一些被挑选过的推特 ( 含有药物名 ) 来建造一个药物不良反应的分类器，也就是说，输入一个与推特文本相对应的字符串，系统能够判断该字符串中是否含有药物不良反应。</p>
         
           <a class="article-more-a" href="/2016/01/06/Knowledge-Technology 总结1/#more">more >></a>
         
@@ -680,6 +683,135 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2015/12/17/Java-HashSet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Java-HashMap" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/14/Java-HashMap/">Java - HashMap</a>
+    </h1>
+  
+
+        
+        <a href="/2015/12/14/Java-HashMap/" class="archive-article-date">
+  	<time datetime="2015-12-14T04:15:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="HashMap__u4ECB_u7ECD"><a href="#HashMap__u4ECB_u7ECD" class="headerlink" title="HashMap 介绍"></a>HashMap 介绍</h2><h3 id="HashMap__u7B80_u4ECB"><a href="#HashMap__u7B80_u4ECB" class="headerlink" title="HashMap 简介"></a>HashMap 简介</h3><p>HashMap 是一个散列表，它存储的内容是<strong>键值对</strong> <em>(key-value)</em>映射。</p>
+<p>HashMap 继承于 AbstractMap，实现了 Map、Cloneable、java.io.Serializable接口。</p>
+<p>HashMap 的实现不是同步的，这意味着它不是线程安全的。它的 key、value 都可以为 <code>null</code>。此外，HashMap 中的映射不是有序的。<br>
+        
+          <a class="article-more-a" href="/2015/12/14/Java-HashMap/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HashMap</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/12/14/Java-HashMap/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
+    <article id="post-Java-Map" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/12/14/Java-Map/">Java - Map</a>
+    </h1>
+  
+
+        
+        <a href="/2015/12/14/Java-Map/" class="archive-article-date">
+  	<time datetime="2015-12-14T02:44:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-12-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Java 的实现中 Map 是一种将对象与对象相关联的设计。常用的实现有 <code>HashMap</code> 和 <code>TreeMap</code>, <code>HashMap</code>被用来快速访问，而 <code>TreeMap</code> 则保证『键』始终有序。Map 可以返回键的 Set, 值的 Collection, 键值对的 Set.</p>
+<p>常用的方法如下所示：<br>
+        
+          <a class="article-more-a" href="/2015/12/14/Java-Map/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">Java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/12/14/Java-Map/">展开全文 >></a>
         </p>
       
 
